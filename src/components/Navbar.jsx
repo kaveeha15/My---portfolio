@@ -1,6 +1,6 @@
 function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 px-6 py-5">
+    <nav className="fixed top-0 left-0 w-full z-50  py-10 px-35">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
 
         {/* Logo */}
