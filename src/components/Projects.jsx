@@ -9,6 +9,9 @@ function Projects() {
       subtitle: "E-Commerce Web Application",
       image: littleLoom,
 
+      github: "https://github.com/kaveeha15/Little-Loom",
+      demo: null,
+
       description:
         "A full-featured e-commerce platform for kids and baby products developed during industrial training. The application includes authentication, product management, cart, wishlist and order processing features.",
 
@@ -34,6 +37,9 @@ function Projects() {
       subtitle: "Travel Planning Web Application",
       image: tripPlanner,
 
+      github: "https://github.com/kaveeha15/trip-planner",
+      demo: null,
+
       description:
         "A travel planning web application designed to help users plan and organize their trips with authentication, real-time data storage and interactive Google Maps features.",
 
@@ -57,6 +63,9 @@ function Projects() {
       title: "Mac Clone Showcase",
       subtitle: "3D Interactive Product Showcase",
       image: macClone,
+
+      github: "https://github.com/kaveeha15/mac-clone",
+      demo: null,
 
       description:
         "A recreation of an Apple Mac product showcase page using modern web technologies, featuring immersive 3D visuals and smooth scroll-based animations.",
@@ -165,7 +174,7 @@ function Projects() {
                 </div>
 
                 {/* Features */}
-                <div>
+                <div className="mb-6">
 
                   <p className="text-gray-300 text-sm font-semibold mb-3">
                     Key Features
@@ -183,6 +192,40 @@ function Projects() {
                     ))}
 
                   </div>
+
+                </div>
+
+                {/* Buttons */}
+                <div className="flex gap-3">
+
+                  {/* GitHub */}
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 text-center px-4 py-2.5 rounded-lg border border-blue-400/30 text-blue-400 hover:bg-blue-400 hover:text-black transition duration-300 text-sm font-medium"
+                  >
+                    GitHub
+                  </a>
+
+                  {/* Live Demo */}
+                  {project.demo ? (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 text-center px-4 py-2.5 rounded-lg bg-blue-400 text-black hover:bg-blue-300 transition duration-300 text-sm font-medium"
+                    >
+                      Live Demo
+                    </a>
+                  ) : (
+                    <button
+                      disabled
+                      className="flex-1 px-4 py-2.5 rounded-lg bg-white/10 text-gray-500 cursor-not-allowed text-sm font-medium"
+                    >
+                      Live Demo Soon
+                    </button>
+                  )}
 
                 </div>
 
