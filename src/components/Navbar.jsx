@@ -1,51 +1,73 @@
+import { Link } from "react-router-dom"
+
 function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 w-full z-50  py-10 px-35">
+    <nav className="fixed top-0 left-0 w-full z-50 py-10 px-35">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
 
         {/* Logo */}
-        <h1 className="text-xl font-bold text-white">
+        <Link to="/" className="text-xl font-bold text-white">
           Kavisha<span className="text-cyan-400">.</span>
-        </h1>
+        </Link>
 
         {/* Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#home" className="text-gray-300 hover:text-cyan-400 transition">
+
+          <Link
+            to="/"
+            className="text-gray-300 hover:text-cyan-400 transition"
+          >
             Home
-          </a>
+          </Link>
 
-          <a href="#about" className="text-gray-300 hover:text-cyan-400 transition">
+          <Link
+            to="/about"
+            className="text-gray-300 hover:text-cyan-400 transition"
+          >
             About
-          </a>
+          </Link>
 
-          <a href="#skills" className="text-gray-300 hover:text-cyan-400 transition">
+          <Link
+            to="/skills"
+            className="text-gray-300 hover:text-cyan-400 transition"
+          >
             Skills
-          </a>
+          </Link>
 
-          <a href="#projects" className="text-gray-300 hover:text-cyan-400 transition">
+          <Link
+            to="/projects"
+            className="text-gray-300 hover:text-cyan-400 transition"
+          >
             Projects
-          </a>
+          </Link>
 
-          <a href="#experience" className="text-gray-300 hover:text-cyan-400 transition">
+          <Link
+            to="/experience"
+            className="text-gray-300 hover:text-cyan-400 transition"
+          >
             Experience
-          </a>
+          </Link>
 
-          <a href="#contact" className="text-gray-300 hover:text-cyan-400 transition">
+          <Link
+            to="/contact"
+            className="text-gray-300 hover:text-cyan-400 transition"
+          >
             Contact
-          </a>
+          </Link>
+
         </div>
 
         {/* Let's Talk Button */}
-        <a
-          href="#contact"
+        <Link
+          to="/contact"
           className="hidden md:block px-5 py-2.5 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
         >
           Let's Talk
-        </a>
+        </Link>
 
       </div>
     </nav>
   )
 }
 
-export default Navbar;
+export default Navbar
