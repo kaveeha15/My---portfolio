@@ -4,6 +4,7 @@ import Hero from "./components/Hero"
 import About from "./components/About"
 import Skills from "./components/Skill"
 import Projects from "./components/Projects"
+import Experience from "./components/Experience"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects/>}/>
+          <Route path="/experience" element={<Experience/>}/>
         </Routes>
       </div>
     </BrowserRouter>
