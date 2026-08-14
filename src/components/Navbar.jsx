@@ -49,10 +49,16 @@ function Navbar() {
           </Link>
 
           <Link
-            to="/contact"
+            to="/education"
             className="text-gray-300 hover:text-cyan-400 transition"
           >
-            Contact
+            Education
+          </Link>
+          <Link
+            to="/services"
+            className="text-gray-300 hover:text-cyan-400 transition"
+          >
+            Services
           </Link>
 
         </div>
