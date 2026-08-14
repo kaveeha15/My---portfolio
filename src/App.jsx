@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import About from "./components/About"
 import Skills from "./components/Skill"
+import Projects from "./components/Projects"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Hero />} />
           <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
+          <Route path="/projects" element={<Projects/>}/>
         </Routes>
       </div>
     </BrowserRouter>
