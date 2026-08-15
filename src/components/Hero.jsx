@@ -404,6 +404,14 @@ function Hero() {
               Contact Me
             </a>
 
+            <a
+            href="/KAVISHA NIMANSHI.pdf"
+            download
+            className="px-6 py-3 rounded-full border border-cyan-400/50 text-cyan-400 hover:bg-cyan-400 hover:text-black hover:scale-105 transition-all duration-300"
+            >
+            Download CV
+            </a>
+
           </div>
 
 

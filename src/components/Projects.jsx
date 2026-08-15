@@ -233,7 +233,7 @@ function Projects() {
 
                 {/* Description */}
 
-                <p className="text-gray-400 text-sm leading-7 mb-6">
+                <p className="text-gray-400 text-sm text-justify leading-7 mb-6">
                   {project.description}
                 </p>
 
