@@ -64,13 +64,12 @@ function Navbar() {
         </div>
 
         {/* Let's Talk Button */}
-        <Link
-          to="/contact"
-          className="hidden md:block px-5 py-2.5 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
-        >
-          Let's Talk
-        </Link>
-
+      <a
+  href="/contact"
+  className="hidden md:block px-5 py-2.5 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+>
+  Let's Talk
+</a>
       </div>
     </nav>
   )

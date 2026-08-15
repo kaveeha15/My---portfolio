@@ -117,14 +117,14 @@ useEffect(() => {
           <div className="flex gap-4">
 
             <a
-              href="#projects"
+              href="/projects"
               className="px-6 py-3 rounded-full bg-cyan-400 text-black font-semibold hover:bg-cyan-300 hover:scale-105 transition duration-300"
             >
               View My Work
             </a>
 
             <a
-              href="#contact"
+              href="/contact"
               className="px-6 py-3 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black hover:scale-105 transition duration-300"
             >
               Contact Me
