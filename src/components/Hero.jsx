@@ -117,14 +117,17 @@ function Hero() {
       className="
         relative
         min-h-screen
-        flex items-center
+        flex
+        items-center
         justify-center
-        px-6
+        px-5
+        sm:px-6
         md:px-12
         lg:px-20
         xl:px-32
-        pt-24
-        pb-20
+        pt-28
+        sm:pt-24
+        pb-24
         overflow-hidden
         bg-black
       "
@@ -148,16 +151,21 @@ function Hero() {
         <div
           className="
             absolute
-            w-[500px]
-            h-[500px]
+            w-[280px]
+            h-[280px]
+            sm:w-[400px]
+            sm:h-[400px]
+            md:w-[500px]
+            md:h-[500px]
             rounded-full
             bg-cyan-500/15
-            blur-[130px]
+            blur-[100px]
+            md:blur-[130px]
             animate-pulse
           "
           style={{
-            top: "-180px",
-            left: "-180px",
+            top: "-120px",
+            left: "-120px",
             animationDuration: "7s",
           }}
         ></div>
@@ -168,16 +176,21 @@ function Hero() {
         <div
           className="
             absolute
-            w-[500px]
-            h-[500px]
+            w-[280px]
+            h-[280px]
+            sm:w-[400px]
+            sm:h-[400px]
+            md:w-[500px]
+            md:h-[500px]
             rounded-full
             bg-cyan-600/15
-            blur-[130px]
+            blur-[100px]
+            md:blur-[130px]
             animate-pulse
           "
           style={{
-            bottom: "-200px",
-            right: "-180px",
+            bottom: "-150px",
+            right: "-130px",
             animationDuration: "9s",
           }}
         ></div>
@@ -188,11 +201,16 @@ function Hero() {
         <div
           className="
             absolute
-            w-[300px]
-            h-[300px]
+            w-[200px]
+            h-[200px]
+            sm:w-[250px]
+            sm:h-[250px]
+            md:w-[300px]
+            md:h-[300px]
             rounded-full
             bg-cyan-400/10
-            blur-[100px]
+            blur-[80px]
+            md:blur-[100px]
             animate-pulse
           "
           style={{
@@ -208,8 +226,10 @@ function Hero() {
         <div
           className="
             absolute
-            w-32
-            h-32
+            w-24
+            h-24
+            sm:w-32
+            sm:h-32
             rounded-full
             bg-cyan-400/10
             blur-3xl
@@ -217,7 +237,7 @@ function Hero() {
           "
           style={{
             top: "18%",
-            right: "18%",
+            right: "12%",
             animationDuration: "4s",
           }}
         ></div>
@@ -237,8 +257,11 @@ function Hero() {
           w-full
           mx-auto
           grid
+          grid-cols-1
           md:grid-cols-2
-          gap-10
+          gap-14
+          sm:gap-16
+          md:gap-10
           lg:gap-16
           items-center
         "
@@ -248,14 +271,15 @@ function Hero() {
             LEFT CONTENT
         ========================================= */}
 
-        <div className="max-w-2xl">
+        <div className="max-w-2xl text-center md:text-left">
 
           {/* Hello */}
 
           <p
             className="
               text-cyan-400
-              text-base
+              text-sm
+              sm:text-base
               md:text-lg
               mb-3
               tracking-wide
@@ -291,11 +315,11 @@ function Hero() {
               ROLE
           ===================================== */}
 
-          <div className="h-10 mb-5">
+          <div className="h-9 sm:h-10 mb-5">
 
             <h2
               className="
-                text-xl
+                text-lg
                 sm:text-2xl
                 md:text-3xl
                 font-semibold
@@ -320,14 +344,25 @@ function Hero() {
               AUTO DESCRIPTION
           ===================================== */}
 
-          <div className="max-w-xl min-h-[58px] mb-7">
+          <div
+            className="
+              max-w-xl
+              mx-auto
+              md:mx-0
+              min-h-[78px]
+              sm:min-h-[65px]
+              mb-7
+            "
+          >
 
             <p
               className={`
                 text-gray-400
-                text-base
+                text-sm
+                sm:text-base
                 md:text-lg
-                leading-relaxed
+                leading-7
+                sm:leading-relaxed
                 transition-all
                 duration-1000
                 ease-in-out
@@ -348,12 +383,28 @@ function Hero() {
               BUTTONS
           ===================================== */}
 
-          <div className="flex flex-wrap gap-4">
+          <div
+            className="
+              flex
+              flex-col
+              sm:flex-row
+              flex-wrap
+              justify-center
+              md:justify-start
+              gap-3
+              sm:gap-4
+            "
+          >
+
+            {/* View Work */}
 
             <a
               href="/projects"
               className="
                 group
+                w-full
+                sm:w-auto
+                text-center
                 px-6
                 py-3
                 rounded-full
@@ -384,9 +435,14 @@ function Hero() {
             </a>
 
 
+            {/* Contact */}
+
             <a
               href="/contact"
               className="
+                w-full
+                sm:w-auto
+                text-center
                 px-6
                 py-3
                 rounded-full
@@ -404,17 +460,34 @@ function Hero() {
               Contact Me
             </a>
 
+
+            {/* CV */}
+
             <a
-            href="/KAVISHA NIMANSHI.pdf"
-            download
-            className="px-6 py-3 rounded-full border border-cyan-400/50 text-cyan-400 hover:bg-cyan-400 hover:text-black hover:scale-105 transition-all duration-300"
+              href="/KAVISHA NIMANSHI.pdf"
+              download
+              className="
+                w-full
+                sm:w-auto
+                text-center
+                px-6
+                py-3
+                rounded-full
+                border
+                border-cyan-400/50
+                text-cyan-400
+                hover:bg-cyan-400
+                hover:text-black
+                hover:scale-105
+                hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]
+                transition-all
+                duration-300
+              "
             >
-            Download CV
+              Download CV
             </a>
 
           </div>
-
-
 
         </div>
 
@@ -423,7 +496,15 @@ function Hero() {
             PROFILE IMAGE
         ========================================= */}
 
-        <div className="flex justify-center md:justify-end">
+        <div
+          className="
+            flex
+            justify-center
+            md:justify-end
+            mt-2
+            md:mt-0
+          "
+        >
 
           <div className="relative flex items-center justify-center">
 
@@ -432,8 +513,10 @@ function Hero() {
             <div
               className="
                 absolute
-                w-[320px]
-                h-[320px]
+                w-[270px]
+                h-[270px]
+                sm:w-[320px]
+                sm:h-[320px]
                 md:w-[420px]
                 md:h-[420px]
                 rounded-full
@@ -452,8 +535,10 @@ function Hero() {
             <div
               className="
                 absolute
-                w-[305px]
-                h-[305px]
+                w-[255px]
+                h-[255px]
+                sm:w-[305px]
+                sm:h-[305px]
                 md:w-[405px]
                 md:h-[405px]
                 rounded-full
@@ -472,8 +557,10 @@ function Hero() {
             <div
               className="
                 absolute
-                w-[325px]
-                h-[325px]
+                w-[275px]
+                h-[275px]
+                sm:w-[325px]
+                sm:h-[325px]
                 md:w-[425px]
                 md:h-[425px]
                 rounded-full
@@ -493,8 +580,10 @@ function Hero() {
             <div
               className="
                 relative
-                w-64
-                h-64
+                w-56
+                h-56
+                sm:w-64
+                sm:h-64
                 md:w-80
                 md:h-80
                 lg:w-[350px]
@@ -538,25 +627,29 @@ function Hero() {
       <div
         className="
           absolute
-          bottom-7
+          bottom-5
+          sm:bottom-7
           left-1/2
           -translate-x-1/2
           w-full
-          px-6
+          px-4
+          sm:px-6
           text-center
           pointer-events-none
         "
       >
 
-        <div className="flex items-center justify-center gap-3">
+        <div className="flex items-center justify-center gap-2 sm:gap-3">
 
           {/* Left Line */}
 
           <span
             className="
               hidden
+              xs:block
               sm:block
-              w-12
+              w-8
+              sm:w-12
               md:w-20
               h-px
               bg-gradient-to-r
@@ -570,11 +663,14 @@ function Hero() {
 
           <p
             className={`
-              text-xs
+              text-[9px]
+              sm:text-xs
               md:text-sm
               uppercase
-              tracking-[0.25em]
+              tracking-[0.15em]
+              sm:tracking-[0.25em]
               font-medium
+              whitespace-nowrap
               transition-all
               duration-1000
               ease-in-out
@@ -585,8 +681,12 @@ function Hero() {
               }
             `}
           >
+
             <span className="text-gray-500">
-              {taglines[taglineIndex].split(" ").slice(0, 2).join(" ")}
+              {taglines[taglineIndex]
+                .split(" ")
+                .slice(0, 2)
+                .join(" ")}
             </span>
 
             <span className="text-cyan-400 ml-1">
@@ -595,6 +695,7 @@ function Hero() {
                 .slice(2)
                 .join(" ")}
             </span>
+
           </p>
 
 
@@ -604,7 +705,8 @@ function Hero() {
             className="
               hidden
               sm:block
-              w-12
+              w-8
+              sm:w-12
               md:w-20
               h-px
               bg-gradient-to-l

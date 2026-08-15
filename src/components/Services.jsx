@@ -48,21 +48,20 @@ function Services() {
       icon: "✧",
       technologies: ["Figma", "Responsive UI", "UX"],
     },
-  ]
+  ];
 
   return (
     <section
       id="services"
-      className="relative min-h-screen bg-black text-white px-6 pt-32 pb-24 overflow-hidden"
+      className="relative min-h-screen bg-black text-white px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 pb-20 sm:pb-24 overflow-hidden"
     >
-
       {/* ================= BACKGROUND GLOWS ================= */}
 
-      <div className="absolute top-10 left-[-180px] w-[450px] h-[450px] bg-blue-500/10 rounded-full blur-[150px] animate-services-glow"></div>
+      <div className="absolute top-10 left-[-120px] sm:left-[-180px] w-72 sm:w-[450px] h-72 sm:h-[450px] bg-blue-500/10 rounded-full blur-[100px] sm:blur-[150px] animate-services-glow"></div>
 
-      <div className="absolute bottom-10 right-[-180px] w-[450px] h-[450px] bg-cyan-400/10 rounded-full blur-[150px] animate-services-glow-2"></div>
+      <div className="absolute bottom-10 right-[-120px] sm:right-[-180px] w-72 sm:w-[450px] h-72 sm:h-[450px] bg-cyan-400/10 rounded-full blur-[100px] sm:blur-[150px] animate-services-glow-2"></div>
 
-      <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-blue-500/[0.03] rounded-full blur-[120px] animate-services-center-glow"></div>
+      <div className="absolute top-1/2 left-1/2 w-56 sm:w-72 h-56 sm:h-72 bg-blue-500/[0.03] rounded-full blur-[90px] sm:blur-[120px] animate-services-center-glow"></div>
 
 
       {/* ================= MAIN CONTAINER ================= */}
@@ -72,18 +71,18 @@ function Services() {
 
         {/* ================= HEADING ================= */}
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
 
-          <p className="text-blue-400 text-sm uppercase tracking-[0.3em] mb-4">
+          <p className="text-blue-400 text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-4">
             What I Do
           </p>
 
 
           {/* Continuously Animated Title */}
 
-          <div className="overflow-hidden py-2">
+          <div className="overflow-hidden py-2 px-2">
 
-            <h1 className="text-4xl md:text-6xl font-bold animate-services-title">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold animate-services-title leading-tight">
 
               My{" "}
 
@@ -96,7 +95,7 @@ function Services() {
           </div>
 
 
-          <p className="text-gray-400 max-w-2xl mx-auto mt-6 leading-7">
+          <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto mt-5 sm:mt-6 leading-7 px-2">
             I create modern digital experiences and scalable web
             applications using technologies that bring ideas to life.
           </p>
@@ -106,7 +105,7 @@ function Services() {
 
         {/* ================= SERVICES GRID ================= */}
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
 
           {services.map((service, index) => (
 
@@ -119,7 +118,11 @@ function Services() {
                 border-white/10
                 rounded-2xl
                 bg-white/[0.03]
-                p-7
+
+                p-5
+                sm:p-6
+                md:p-7
+
                 overflow-hidden
 
                 hover:border-blue-400/40
@@ -136,10 +139,16 @@ function Services() {
               <div
                 className="
                   absolute
-                  -top-24
-                  -right-24
-                  w-48
-                  h-48
+                  -top-20
+                  -right-20
+                  sm:-top-24
+                  sm:-right-24
+
+                  w-40
+                  h-40
+                  sm:w-48
+                  sm:h-48
+
                   bg-blue-400/10
                   rounded-full
                   blur-3xl
@@ -174,11 +183,11 @@ function Services() {
 
               {/* ================= TOP ROW ================= */}
 
-              <div className="flex items-center justify-between mb-8">
+              <div className="flex items-center justify-between mb-6 sm:mb-8">
 
                 {/* Number */}
 
-                <span className="text-sm text-blue-400 font-medium tracking-wider">
+                <span className="text-xs sm:text-sm text-blue-400 font-medium tracking-wider">
                   {service.number}
                 </span>
 
@@ -187,8 +196,11 @@ function Services() {
 
                 <div
                   className="
-                    w-11
-                    h-11
+                    w-10
+                    h-10
+                    sm:w-11
+                    sm:h-11
+
                     rounded-xl
                     border
                     border-blue-400/20
@@ -197,7 +209,8 @@ function Services() {
                     items-center
                     justify-center
 
-                    text-2xl
+                    text-xl
+                    sm:text-2xl
                     text-blue-400
 
                     group-hover:scale-110
@@ -217,10 +230,14 @@ function Services() {
 
               <h2
                 className="
-                  text-xl
+                  text-lg
+                  sm:text-xl
                   md:text-2xl
                   font-semibold
-                  mb-4
+                  mb-3
+                  sm:mb-4
+
+                  leading-snug
 
                   group-hover:text-blue-400
 
@@ -239,7 +256,9 @@ function Services() {
                   text-gray-400
                   text-sm
                   leading-7
-                  mb-7
+                  mb-6
+                  sm:mb-7
+
                   animate-service-description
                 "
                 style={{
@@ -259,10 +278,12 @@ function Services() {
                   <span
                     key={technology}
                     className="
-                      px-3
+                      px-2.5
+                      sm:px-3
                       py-1.5
                       rounded-full
-                      text-xs
+                      text-[11px]
+                      sm:text-xs
                       text-gray-300
                       bg-white/[0.04]
                       border
@@ -314,7 +335,7 @@ function Services() {
 
         {/* ================= BOTTOM CTA ================= */}
 
-        <div className="mt-20 text-center">
+        <div className="mt-16 sm:mt-20 text-center px-2">
 
           <p className="text-gray-400 text-sm mb-5">
             Have a project in mind?
@@ -327,16 +348,21 @@ function Services() {
               group
               inline-flex
               items-center
-              gap-3
+              justify-center
+              gap-2 sm:gap-3
 
-              px-7
+              px-5
+              sm:px-7
               py-3
+
               rounded-full
 
               border
               border-blue-400/50
 
               text-blue-400
+              text-sm
+              sm:text-base
 
               hover:bg-blue-400
               hover:text-black
@@ -367,7 +393,7 @@ function Services() {
       </div>
 
     </section>
-  )
+  );
 }
 
-export default Services
+export default Services;

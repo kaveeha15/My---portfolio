@@ -89,42 +89,121 @@ function Projects() {
   return (
     <section
       id="projects"
-      className="relative min-h-screen bg-black text-white px-6 pt-32 pb-24 overflow-hidden"
+      className="
+        relative
+        min-h-screen
+        bg-black
+        text-white
+        px-4
+        sm:px-6
+        pt-28
+        sm:pt-32
+        pb-20
+        sm:pb-24
+        overflow-hidden
+      "
     >
 
       {/* ================================= */}
       {/* BACKGROUND EFFECTS */}
       {/* ================================= */}
 
-      <div className="absolute top-20 left-[-180px] w-[450px] h-[450px] bg-blue-500/10 rounded-full blur-[150px] animate-about-glow"></div>
+      <div
+        className="
+          absolute
+          top-20
+          left-[-180px]
+          w-[300px]
+          h-[300px]
+          sm:w-[450px]
+          sm:h-[450px]
+          bg-blue-500/10
+          rounded-full
+          blur-[120px]
+          sm:blur-[150px]
+          pointer-events-none
+        "
+      ></div>
 
-      <div className="absolute bottom-10 right-[-180px] w-[450px] h-[450px] bg-cyan-400/10 rounded-full blur-[150px] animate-about-glow-2"></div>
+      <div
+        className="
+          absolute
+          bottom-10
+          right-[-180px]
+          w-[300px]
+          h-[300px]
+          sm:w-[450px]
+          sm:h-[450px]
+          bg-cyan-400/10
+          rounded-full
+          blur-[120px]
+          sm:blur-[150px]
+          pointer-events-none
+        "
+      ></div>
 
-      <div className="absolute top-[45%] right-[20%] w-32 h-32 bg-blue-400/5 rounded-full blur-[90px]"></div>
+      <div
+        className="
+          absolute
+          top-[45%]
+          right-[10%]
+          sm:right-[20%]
+          w-24
+          h-24
+          sm:w-32
+          sm:h-32
+          bg-blue-400/5
+          rounded-full
+          blur-[70px]
+          sm:blur-[90px]
+          pointer-events-none
+        "
+      ></div>
 
 
       {/* ================================= */}
       {/* MAIN CONTENT */}
       {/* ================================= */}
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
 
 
         {/* ================================= */}
         {/* SECTION HEADING */}
         {/* ================================= */}
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 sm:mb-16">
 
-          <p className="text-blue-400 text-sm uppercase tracking-[0.3em] mb-4">
+          <p className="
+            text-blue-400
+            text-[11px]
+            sm:text-sm
+            uppercase
+            tracking-[0.2em]
+            sm:tracking-[0.3em]
+            mb-4
+          ">
             My Projects
           </p>
 
+
           {/* Animated Title */}
 
-          <div className="relative overflow-hidden py-2">
+          <div className="
+            relative
+            overflow-hidden
+            py-2
+            w-full
+          ">
 
-            <h1 className="text-4xl md:text-6xl font-bold animate-project-title">
+            <h1 className="
+              text-3xl
+              sm:text-4xl
+              md:text-6xl
+              font-bold
+              animate-project-title
+              leading-tight
+            ">
 
               Things I've{" "}
 
@@ -136,7 +215,18 @@ function Projects() {
 
           </div>
 
-          <p className="text-gray-400 max-w-2xl mx-auto mt-6 leading-7">
+
+          <p className="
+            text-gray-400
+            text-sm
+            sm:text-base
+            max-w-2xl
+            mx-auto
+            mt-5
+            sm:mt-6
+            leading-7
+            px-2
+          ">
             A collection of projects I've developed using modern
             technologies and development practices.
           </p>
@@ -148,7 +238,14 @@ function Projects() {
         {/* PROJECTS GRID */}
         {/* ================================= */}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="
+          grid
+          grid-cols-1
+          md:grid-cols-2
+          lg:grid-cols-3
+          gap-5
+          sm:gap-7
+        ">
 
           {projects.map((project, index) => (
 
@@ -164,7 +261,8 @@ function Projects() {
                 backdrop-blur-sm
                 overflow-hidden
                 hover:border-blue-400/50
-                hover:-translate-y-2
+                hover:-translate-y-1
+                sm:hover:-translate-y-2
                 hover:shadow-[0_15px_50px_rgba(59,130,246,0.12)]
                 transition-all
                 duration-500
@@ -174,11 +272,18 @@ function Projects() {
               }}
             >
 
+
               {/* ================================= */}
               {/* IMAGE */}
               {/* ================================= */}
 
-              <div className="relative h-52 overflow-hidden bg-white/[0.03]">
+              <div className="
+                relative
+                h-48
+                sm:h-52
+                overflow-hidden
+                bg-white/[0.03]
+              ">
 
                 <img
                   src={project.image}
@@ -187,21 +292,52 @@ function Projects() {
                     w-full
                     h-full
                     object-cover
-                    group-hover:scale-110
+                    group-hover:scale-105
+                    sm:group-hover:scale-110
                     transition-transform
                     duration-700
                   "
                 />
 
+
                 {/* Image Overlay */}
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-70"></div>
+                <div className="
+                  absolute
+                  inset-0
+                  bg-gradient-to-t
+                  from-black/70
+                  via-transparent
+                  to-transparent
+                  opacity-70
+                "></div>
+
 
                 {/* Project Number */}
 
-                <div className="absolute top-4 left-4">
+                <div className="
+                  absolute
+                  top-3
+                  left-3
+                  sm:top-4
+                  sm:left-4
+                ">
 
-                  <span className="px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/10 text-xs text-gray-300">
+                  <span className="
+                    px-2.5
+                    py-1
+                    sm:px-3
+                    sm:py-1.5
+                    rounded-full
+                    bg-black/60
+                    backdrop-blur-md
+                    border
+                    border-white/10
+                    text-[10px]
+                    sm:text-xs
+                    text-gray-300
+                    whitespace-nowrap
+                  ">
                     Project {String(index + 1).padStart(2, "0")}
                   </span>
 
@@ -214,26 +350,54 @@ function Projects() {
               {/* PROJECT CONTENT */}
               {/* ================================= */}
 
-              <div className="p-6">
+              <div className="
+                p-5
+                sm:p-6
+              ">
 
 
                 {/* Subtitle */}
 
-                <p className="text-blue-400 text-xs uppercase tracking-[0.15em] mb-2">
+                <p className="
+                  text-blue-400
+                  text-[10px]
+                  sm:text-xs
+                  uppercase
+                  tracking-[0.12em]
+                  sm:tracking-[0.15em]
+                  mb-2
+                  leading-5
+                ">
                   {project.subtitle}
                 </p>
 
 
                 {/* Title */}
 
-                <h2 className="text-2xl font-semibold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                <h2 className="
+                  text-xl
+                  sm:text-2xl
+                  font-semibold
+                  text-white
+                  mb-4
+                  leading-snug
+                  group-hover:text-blue-400
+                  transition-colors
+                  duration-300
+                ">
                   {project.title}
                 </h2>
 
 
                 {/* Description */}
 
-                <p className="text-gray-400 text-sm text-justify leading-7 mb-6">
+                <p className="
+                  text-gray-400
+                  text-sm
+                  text-justify
+                  leading-7
+                  mb-6
+                ">
                   {project.description}
                 </p>
 
@@ -242,16 +406,23 @@ function Projects() {
                 {/* TECHNOLOGIES */}
                 {/* ================================= */}
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="
+                  flex
+                  flex-wrap
+                  gap-2
+                  mb-6
+                ">
 
                   {project.technologies.map((technology) => (
 
                     <span
                       key={technology}
                       className="
-                        px-3
+                        px-2.5
                         py-1.5
-                        text-xs
+                        sm:px-3
+                        text-[10px]
+                        sm:text-xs
                         rounded-full
                         bg-blue-400/10
                         text-blue-300
@@ -276,7 +447,11 @@ function Projects() {
                 {/* DIVIDER */}
                 {/* ================================= */}
 
-                <div className="border-t border-white/10 mb-5"></div>
+                <div className="
+                  border-t
+                  border-white/10
+                  mb-5
+                "></div>
 
 
                 {/* ================================= */}
@@ -285,20 +460,46 @@ function Projects() {
 
                 <div className="mb-6">
 
-                  <p className="text-gray-200 text-sm font-semibold mb-3">
+                  <p className="
+                    text-gray-200
+                    text-sm
+                    font-semibold
+                    mb-3
+                  ">
                     Key Features
                   </p>
 
-                  <div className="grid grid-cols-1 gap-2">
+
+                  <div className="
+                    grid
+                    grid-cols-1
+                    gap-2
+                  ">
 
                     {project.features.map((feature) => (
 
                       <div
                         key={feature}
-                        className="flex items-center gap-2 text-xs text-gray-500 group-hover:text-gray-400 transition"
+                        className="
+                          flex
+                          items-start
+                          gap-2
+                          text-xs
+                          text-gray-500
+                          group-hover:text-gray-400
+                          transition
+                          leading-5
+                        "
                       >
 
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-400 shrink-0"></span>
+                        <span className="
+                          w-1.5
+                          h-1.5
+                          rounded-full
+                          bg-blue-400
+                          shrink-0
+                          mt-1.5
+                        "></span>
 
                         <span>
                           {feature}
@@ -317,7 +518,13 @@ function Projects() {
                 {/* BUTTONS */}
                 {/* ================================= */}
 
-                <div className="flex gap-3">
+                <div className="
+                  flex
+                  gap-2.5
+                  sm:gap-3
+                  w-full
+                ">
+
 
                   {/* GitHub */}
 
@@ -328,7 +535,8 @@ function Projects() {
                     className="
                       flex-1
                       text-center
-                      px-4
+                      px-3
+                      sm:px-4
                       py-2.5
                       rounded-lg
                       border
@@ -339,8 +547,10 @@ function Projects() {
                       hover:shadow-[0_0_20px_rgba(96,165,250,0.25)]
                       transition-all
                       duration-300
-                      text-sm
+                      text-xs
+                      sm:text-sm
                       font-medium
+                      whitespace-nowrap
                     "
                   >
                     GitHub
@@ -358,7 +568,8 @@ function Projects() {
                       className="
                         flex-1
                         text-center
-                        px-4
+                        px-3
+                        sm:px-4
                         py-2.5
                         rounded-lg
                         bg-blue-400
@@ -367,8 +578,10 @@ function Projects() {
                         hover:shadow-[0_0_20px_rgba(96,165,250,0.35)]
                         transition-all
                         duration-300
-                        text-sm
+                        text-xs
+                        sm:text-sm
                         font-medium
+                        whitespace-nowrap
                       "
                     >
                       Live Demo
@@ -380,14 +593,17 @@ function Projects() {
                       disabled
                       className="
                         flex-1
-                        px-4
+                        px-2
+                        sm:px-4
                         py-2.5
                         rounded-lg
                         bg-white/10
                         text-gray-500
                         cursor-not-allowed
-                        text-sm
+                        text-[11px]
+                        sm:text-sm
                         font-medium
+                        whitespace-nowrap
                       "
                     >
                       Live Demo Soon
@@ -410,9 +626,22 @@ function Projects() {
         {/* BOTTOM DECORATION */}
         {/* ================================= */}
 
-        <div className="mt-20 flex justify-center">
+        <div className="
+          mt-14
+          sm:mt-20
+          flex
+          justify-center
+        ">
 
-          <div className="w-24 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+          <div className="
+            w-20
+            sm:w-24
+            h-px
+            bg-gradient-to-r
+            from-transparent
+            via-blue-400
+            to-transparent
+          "></div>
 
         </div>
 
