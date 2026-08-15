@@ -1,155 +1,614 @@
 import profile from "../assets/profile.jpeg"
 import ParticlesBackground from "./ParticlesBackground"
-import { useState } from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 
 function Hero() {
-const [text, setText] = useState("")
-const [isDeleting, setIsDeleting] = useState(false)
-const [index, setIndex] = useState(0)
+  const [text, setText] = useState("")
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [index, setIndex] = useState(0)
 
-const roles = [
-  "Full Stack Developer",
-  "Creative Corder",
-  "Web Developer",
-]
-useEffect(() => {
-  const currentRole = roles[index]
+  const roles = [
+    "Full Stack Developer",
+    "Creative Coder",
+    "Web Developer",
+  ]
 
-  const typingSpeed = isDeleting ? 60 : 100
+  /* =========================================
+     ROLE TYPING EFFECT
+  ========================================= */
 
-  const timer = setTimeout(() => {
-    if (!isDeleting) {
-      setText(currentRole.substring(0, text.length + 1))
+  useEffect(() => {
+    const currentRole = roles[index]
+    const typingSpeed = isDeleting ? 60 : 100
 
-      if (text === currentRole) {
-        setTimeout(() => setIsDeleting(true), 1200)
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        setText(currentRole.substring(0, text.length + 1))
+
+        if (text === currentRole) {
+          setTimeout(() => setIsDeleting(true), 1200)
+        }
+      } else {
+        setText(currentRole.substring(0, text.length - 1))
+
+        if (text === "") {
+          setIsDeleting(false)
+          setIndex((prev) => (prev + 1) % roles.length)
+        }
       }
-    } else {
-      setText(currentRole.substring(0, text.length - 1))
+    }, typingSpeed)
 
-      if (text === "") {
-        setIsDeleting(false)
-        setIndex((prev) => (prev + 1) % roles.length)
-      }
+    return () => clearTimeout(timer)
+  }, [text, isDeleting, index])
+
+
+  /* =========================================
+     HERO DESCRIPTION
+  ========================================= */
+
+  const descriptions = [
+    "I build modern and responsive web applications.",
+    "I create clean and user-friendly digital experiences.",
+    "I develop interactive interfaces using modern technologies.",
+    "I turn creative ideas into functional web solutions.",
+    "I continuously learn and improve my software development skills.",
+  ]
+
+  const [descriptionIndex, setDescriptionIndex] = useState(0)
+  const [descriptionVisible, setDescriptionVisible] = useState(true)
+
+  useEffect(() => {
+    const fadeOutTimer = setTimeout(() => {
+      setDescriptionVisible(false)
+    }, 3200)
+
+    const changeTextTimer = setTimeout(() => {
+      setDescriptionIndex(
+        (prev) => (prev + 1) % descriptions.length
+      )
+
+      setDescriptionVisible(true)
+    }, 3900)
+
+    return () => {
+      clearTimeout(fadeOutTimer)
+      clearTimeout(changeTextTimer)
     }
-  }, typingSpeed)
+  }, [descriptionIndex])
 
-  return () => clearTimeout(timer)
-}, [text, isDeleting, index])
+
+  /* =========================================
+     BOTTOM TAGLINES
+  ========================================= */
+
+  const taglines = [
+    "Turning Ideas Into Digital Experiences",
+    "Building With Creativity & Technology",
+    "Designing. Developing. Creating.",
+    "Bringing Ideas To Life Through Code",
+  ]
+
+  const [taglineIndex, setTaglineIndex] = useState(0)
+  const [taglineVisible, setTaglineVisible] = useState(true)
+
+  useEffect(() => {
+    const fadeOut = setTimeout(() => {
+      setTaglineVisible(false)
+    }, 3500)
+
+    const changeText = setTimeout(() => {
+      setTaglineIndex(
+        (prev) => (prev + 1) % taglines.length
+      )
+
+      setTaglineVisible(true)
+    }, 4300)
+
+    return () => {
+      clearTimeout(fadeOut)
+      clearTimeout(changeText)
+    }
+  }, [taglineIndex])
+
+
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-40 pt-20 overflow-hidden bg-black"
+      className="
+        relative
+        min-h-screen
+        flex items-center
+        justify-center
+        px-6
+        md:px-12
+        lg:px-20
+        xl:px-32
+        pt-24
+        pb-20
+        overflow-hidden
+        bg-black
+      "
     >
-      {/* Particles Background */}
-     <ParticlesBackground />
 
-{/* Animated Background */}
-<div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* =========================================
+          PARTICLES
+      ========================================= */}
 
-  {/* Cyan Glow */}
-  <div
-    className="absolute w-[500px] h-[500px] rounded-full bg-cyan-500/20  blur-[120px] animate-pulse"
-    style={{
-      top: "-150px",
-      left: "-150px",
-      animationDuration: "6s",
-    }}
-  ></div>
+      <ParticlesBackground />
 
-  {/* cyan Glow */}
-  <div
-    className="absolute w-[500px] h-[500px] rounded-full bg-cyan-600/20 blur-[120px] animate-pulse"
-    style={{
-      bottom: "-150px",
-      right: "-150px",
-      animationDuration: "6s",
-    }}
-  ></div>
 
-  {/* Center Glow */}
-  <div
-    className="absolute w-[300px] h-[300px] rounded-full bg-cyan-400/10 blur-[100px] animate-pulse"
-    style={{
-      top: "40%",
-      left: "45%",
-      animationDuration: "4s",
-    }}
-  ></div>
+      {/* =========================================
+          ANIMATED BACKGROUND
+      ========================================= */}
 
-</div>
-      
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-      {/* Main Content */}
-      <div className="max-w-7xl w-full mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
+        {/* Top Left Glow */}
 
-        {/* Left Content */}
-        <div>
+        <div
+          className="
+            absolute
+            w-[500px]
+            h-[500px]
+            rounded-full
+            bg-cyan-500/15
+            blur-[130px]
+            animate-pulse
+          "
+          style={{
+            top: "-180px",
+            left: "-180px",
+            animationDuration: "7s",
+          }}
+        ></div>
 
-          <p className="text-cyan-400 text-lg mb-4">
+
+        {/* Bottom Right Glow */}
+
+        <div
+          className="
+            absolute
+            w-[500px]
+            h-[500px]
+            rounded-full
+            bg-cyan-600/15
+            blur-[130px]
+            animate-pulse
+          "
+          style={{
+            bottom: "-200px",
+            right: "-180px",
+            animationDuration: "9s",
+          }}
+        ></div>
+
+
+        {/* Center Glow */}
+
+        <div
+          className="
+            absolute
+            w-[300px]
+            h-[300px]
+            rounded-full
+            bg-cyan-400/10
+            blur-[100px]
+            animate-pulse
+          "
+          style={{
+            top: "42%",
+            left: "45%",
+            animationDuration: "5s",
+          }}
+        ></div>
+
+
+        {/* Small Floating Glow */}
+
+        <div
+          className="
+            absolute
+            w-32
+            h-32
+            rounded-full
+            bg-cyan-400/10
+            blur-3xl
+            animate-pulse
+          "
+          style={{
+            top: "18%",
+            right: "18%",
+            animationDuration: "4s",
+          }}
+        ></div>
+
+      </div>
+
+
+      {/* =========================================
+          MAIN CONTENT
+      ========================================= */}
+
+      <div
+        className="
+          relative
+          z-10
+          max-w-7xl
+          w-full
+          mx-auto
+          grid
+          md:grid-cols-2
+          gap-10
+          lg:gap-16
+          items-center
+        "
+      >
+
+        {/* =========================================
+            LEFT CONTENT
+        ========================================= */}
+
+        <div className="max-w-2xl">
+
+          {/* Hello */}
+
+          <p
+            className="
+              text-cyan-400
+              text-base
+              md:text-lg
+              mb-3
+              tracking-wide
+            "
+          >
             Hello, I'm
           </p>
 
+
+          {/* NAME */}
+
           <h1
-            className="text-5xl md:text-7xl font-bold text-white mb-6
-            drop-shadow-[0_0_10px_rgba(34,211,238,0.3)]
-            hover:drop-shadow-[0_0_10px_rgba(14,200,208,0.8)]
-            transition-all duration-400"
-            >
+            className="
+              text-4xl
+              sm:text-5xl
+              md:text-6xl
+              xl:text-7xl
+              font-bold
+              text-white
+              mb-5
+              leading-tight
+              drop-shadow-[0_0_15px_rgba(34,211,238,0.25)]
+              hover:drop-shadow-[0_0_30px_rgba(34,211,238,0.55)]
+              transition-all
+              duration-700
+            "
+          >
             Kavisha Nimanshi
-        </h1>
+          </h1>
 
-          <h2 className="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
-  <span className="text-cyan-400">
-    {text}
-  </span>
-  <span className="text-cyan-400 animate-pulse">
-    |
-  </span>
-</h2>
-          <p className="text-gray-400 text-lg leading-relaxed max-w-xl mb-8">
-            I build modern, responsive and user-friendly web applications
-            using modern technologies.
-          </p>
 
-          {/* Buttons */}
-          <div className="flex gap-4">
+          {/* =====================================
+              ROLE
+          ===================================== */}
+
+          <div className="h-10 mb-5">
+
+            <h2
+              className="
+                text-xl
+                sm:text-2xl
+                md:text-3xl
+                font-semibold
+                text-gray-300
+              "
+            >
+
+              <span className="text-cyan-400">
+                {text}
+              </span>
+
+              <span className="text-cyan-400 animate-pulse ml-1">
+                |
+              </span>
+
+            </h2>
+
+          </div>
+
+
+          {/* =====================================
+              AUTO DESCRIPTION
+          ===================================== */}
+
+          <div className="max-w-xl min-h-[58px] mb-7">
+
+            <p
+              className={`
+                text-gray-400
+                text-base
+                md:text-lg
+                leading-relaxed
+                transition-all
+                duration-1000
+                ease-in-out
+                ${
+                  descriptionVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-2"
+                }
+              `}
+            >
+              {descriptions[descriptionIndex]}
+            </p>
+
+          </div>
+
+
+          {/* =====================================
+              BUTTONS
+          ===================================== */}
+
+          <div className="flex flex-wrap gap-4">
 
             <a
               href="/projects"
-              className="px-6 py-3 rounded-full bg-cyan-400 text-black font-semibold hover:bg-cyan-300 hover:scale-105 transition duration-300"
+              className="
+                group
+                px-6
+                py-3
+                rounded-full
+                bg-cyan-400
+                text-black
+                font-semibold
+                shadow-[0_0_20px_rgba(34,211,238,0.25)]
+                hover:bg-cyan-300
+                hover:scale-105
+                hover:shadow-[0_0_35px_rgba(34,211,238,0.5)]
+                transition-all
+                duration-300
+              "
             >
               View My Work
+
+              <span
+                className="
+                  ml-2
+                  inline-block
+                  group-hover:translate-x-1
+                  transition
+                "
+              >
+                →
+              </span>
+
             </a>
+
 
             <a
               href="/contact"
-              className="px-6 py-3 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black hover:scale-105 transition duration-300"
+              className="
+                px-6
+                py-3
+                rounded-full
+                border
+                border-cyan-400
+                text-cyan-400
+                hover:bg-cyan-400
+                hover:text-black
+                hover:scale-105
+                hover:shadow-[0_0_30px_rgba(34,211,238,0.35)]
+                transition-all
+                duration-300
+              "
             >
               Contact Me
             </a>
 
           </div>
 
+
+
         </div>
 
-        {/* Profile Photo */}
-        <div className="flex justify-center animate-float">
 
-          <div className="w-72 h-72 md:w-96 md:h-96 rounded-full border-2 border-cyan-400 shadow-[0_0_40px_rgba(34,211,238,0.4)] flex items-center justify-center overflow-hidden hover:scale-105 transition duration-500">
+        {/* =========================================
+            PROFILE IMAGE
+        ========================================= */}
 
-            <img
-              src={profile}
-              alt="Kavisha Nimanshi"
-              className="w-full h-full object-cover rounded-full"
-            />
+        <div className="flex justify-center md:justify-end">
+
+          <div className="relative flex items-center justify-center">
+
+            {/* Outer Glow */}
+
+            <div
+              className="
+                absolute
+                w-[320px]
+                h-[320px]
+                md:w-[420px]
+                md:h-[420px]
+                rounded-full
+                bg-cyan-400/10
+                blur-3xl
+                animate-pulse
+              "
+              style={{
+                animationDuration: "5s",
+              }}
+            ></div>
+
+
+            {/* Rotating Ring */}
+
+            <div
+              className="
+                absolute
+                w-[305px]
+                h-[305px]
+                md:w-[405px]
+                md:h-[405px]
+                rounded-full
+                border
+                border-cyan-400/25
+                animate-spin
+              "
+              style={{
+                animationDuration: "18s",
+              }}
+            ></div>
+
+
+            {/* Second Ring */}
+
+            <div
+              className="
+                absolute
+                w-[325px]
+                h-[325px]
+                md:w-[425px]
+                md:h-[425px]
+                rounded-full
+                border
+                border-cyan-400/10
+                animate-spin
+              "
+              style={{
+                animationDuration: "26s",
+                animationDirection: "reverse",
+              }}
+            ></div>
+
+
+            {/* Profile */}
+
+            <div
+              className="
+                relative
+                w-64
+                h-64
+                md:w-80
+                md:h-80
+                lg:w-[350px]
+                lg:h-[350px]
+                rounded-full
+                border-2
+                border-cyan-400
+                shadow-[0_0_50px_rgba(34,211,238,0.4)]
+                overflow-hidden
+                animate-float
+                hover:scale-105
+                transition-transform
+                duration-700
+              "
+            >
+
+              <img
+                src={profile}
+                alt="Kavisha Nimanshi"
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                  rounded-full
+                "
+              />
+
+            </div>
 
           </div>
 
         </div>
-        
+
       </div>
+
+
+      {/* =========================================
+          BOTTOM LIVE TAGLINE
+      ========================================= */}
+
+      <div
+        className="
+          absolute
+          bottom-7
+          left-1/2
+          -translate-x-1/2
+          w-full
+          px-6
+          text-center
+          pointer-events-none
+        "
+      >
+
+        <div className="flex items-center justify-center gap-3">
+
+          {/* Left Line */}
+
+          <span
+            className="
+              hidden
+              sm:block
+              w-12
+              md:w-20
+              h-px
+              bg-gradient-to-r
+              from-transparent
+              to-cyan-400/40
+            "
+          ></span>
+
+
+          {/* Tagline */}
+
+          <p
+            className={`
+              text-xs
+              md:text-sm
+              uppercase
+              tracking-[0.25em]
+              font-medium
+              transition-all
+              duration-1000
+              ease-in-out
+              ${
+                taglineVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-2"
+              }
+            `}
+          >
+            <span className="text-gray-500">
+              {taglines[taglineIndex].split(" ").slice(0, 2).join(" ")}
+            </span>
+
+            <span className="text-cyan-400 ml-1">
+              {taglines[taglineIndex]
+                .split(" ")
+                .slice(2)
+                .join(" ")}
+            </span>
+          </p>
+
+
+          {/* Right Line */}
+
+          <span
+            className="
+              hidden
+              sm:block
+              w-12
+              md:w-20
+              h-px
+              bg-gradient-to-l
+              from-transparent
+              to-cyan-400/40
+            "
+          ></span>
+
+        </div>
+
+      </div>
+
     </section>
   )
 }

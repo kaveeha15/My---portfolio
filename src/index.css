@@ -13,7 +13,9 @@ body {
 }
 
 
-/* Profile Floating Animation */
+/* ================================= */
+/* PROFILE FLOATING ANIMATION */
+/* ================================= */
 
 @keyframes float {
   0%,
@@ -29,6 +31,12 @@ body {
 .animate-float {
   animation: float 4s ease-in-out infinite;
 }
+
+
+/* ================================= */
+/* FLOATING BACKGROUND ANIMATION */
+/* ================================= */
+
 @keyframes floating {
   0% {
     transform: translate3d(0, 0, 0);
@@ -61,6 +69,12 @@ body {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
+
+
+/* ================================= */
+/* ABOUT BACKGROUND GLOW */
+/* ================================= */
+
 @keyframes aboutGlow {
   0%,
   100% {
@@ -93,4 +107,872 @@ body {
 
 .animate-about-glow-2 {
   animation: aboutGlow2 15s ease-in-out infinite;
+}
+
+
+/* ================================= */
+/* PHOTO OUTER RING */
+/* ================================= */
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 18s linear infinite;
+}
+
+
+/* ================================= */
+/* PHOTO INNER ACCENT RING */
+/* ================================= */
+
+@keyframes spin-slow-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 12s linear infinite;
+}
+
+
+/* ================================= */
+/* ABOUT ROLE TEXT ANIMATION */
+/* ================================= */
+
+@keyframes role-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.animate-role {
+  animation: role-fade 3s ease-in-out;
+}
+@keyframes role-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+.animate-role {
+  animation: role-fade 3s ease-in-out;
+}
+/* ================================= */
+/* SKILLS HEADING MOVEMENT */
+/* ================================= */
+
+@keyframes skillsHeadingMove {
+  0% {
+    transform: translateX(-35px);
+  }
+
+  50% {
+    transform: translateX(35px);
+  }
+
+  100% {
+    transform: translateX(-35px);
+  }
+}
+
+.animate-skills-heading {
+  animation: skillsHeadingMove 7s ease-in-out infinite;
+}
+@keyframes logoFade {
+  0% {
+    opacity: 0.01;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.01;
+  }
+}
+
+.animate-logo-fade {
+  animation: logoFade 7s ease-in-out infinite;
+}
+/* ================================= */
+/* CERTIFICATES HEADING MARQUEE */
+/* ================================= */
+
+@keyframes certificateHeadingMove {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+.animate-certificate-heading {
+  width: max-content;
+  animation: certificateHeadingMove 15s linear infinite;
+}
+/* ================================= */
+/* PROFESSIONAL JOURNEY TITLE */
+/* ================================= */
+
+@keyframes journeyTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+}
+
+.animate-journey-title {
+  animation: journeyTitle 5s ease-in-out infinite;
+}
+
+
+/* ================================= */
+/* JOURNEY BLUE GLOW */
+/* ================================= */
+
+@keyframes journeyGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 0 rgba(96, 165, 250, 0);
+  }
+
+  50% {
+    text-shadow:
+      0 0 12px rgba(96, 165, 250, 0.35),
+      0 0 25px rgba(96, 165, 250, 0.15);
+  }
+}
+
+.animate-journey-glow {
+  animation: journeyGlow 4s ease-in-out infinite;
+}
+/* ================================= */
+/* PROJECT TITLE ANIMATION */
+/* ================================= */
+
+@keyframes projectTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0.95;
+    transform: translateY(0);
+  }
+}
+
+.animate-project-title {
+  animation: projectTitle 5s ease-in-out infinite;
+}
+
+
+/* ================================= */
+/* PROJECT TITLE BLUE GLOW */
+/* ================================= */
+
+@keyframes projectGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 0 rgba(96, 165, 250, 0);
+  }
+
+  50% {
+    text-shadow:
+      0 0 12px rgba(96, 165, 250, 0.35),
+      0 0 28px rgba(96, 165, 250, 0.15);
+  }
+}
+
+.animate-project-glow {
+  animation: projectGlow 4s ease-in-out infinite;
+}
+/* =========================================
+   SERVICES CONTINUOUS ANIMATIONS
+========================================= */
+
+@keyframes servicesLabel {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+.animate-services-label {
+  animation: servicesLabel 4s ease-in-out infinite;
+}
+
+
+/* Main My Services heading */
+
+@keyframes servicesHeading {
+  0%,
+  100% {
+    opacity: 0.82;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}
+
+.animate-services-heading {
+  animation: servicesHeading 5s ease-in-out infinite;
+}
+
+
+/* Blue underline */
+
+@keyframes servicesLine {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scaleX(0.7);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.animate-services-line {
+  transform-origin: center;
+  animation: servicesLine 3s ease-in-out infinite;
+}
+
+
+/* Card descriptions */
+
+@keyframes serviceParagraph {
+  0%,
+  100% {
+    opacity: 0.65;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+  }
+}
+
+.animate-service-paragraph {
+  animation: serviceParagraph 5s ease-in-out infinite;
+}
+
+
+/* Background Glow */
+
+@keyframes serviceGlow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translate(35px, -25px) scale(1.08);
+    opacity: 0.75;
+  }
+}
+
+.animate-service-glow {
+  animation: serviceGlow 12s ease-in-out infinite;
+}
+
+
+/* Second Glow */
+
+@keyframes serviceGlow2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translate(-30px, 25px) scale(1.06);
+    opacity: 0.7;
+  }
+}
+
+.animate-service-glow-2 {
+  animation: serviceGlow2 15s ease-in-out infinite;
+}
+
+
+/* Center Glow */
+
+@keyframes serviceOrbit {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-40%, -55%) scale(1.15);
+  }
+}
+
+.animate-service-orbit {
+  animation: serviceOrbit 10s ease-in-out infinite;
+}
+/* =========================================
+   SERVICES PAGE ANIMATIONS
+========================================= */
+
+/* My Services - continuous slow movement */
+
+@keyframes servicesTitle {
+  0% {
+    transform: translateX(-18px);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: translateX(18px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-18px);
+    opacity: 0.65;
+  }
+}
+
+.animate-services-title {
+  animation: servicesTitle 7s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SERVICE DESCRIPTION
+   Slow fade in → fade out → repeat
+========================================= */
+
+@keyframes serviceDescription {
+  0% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.45;
+  }
+}
+
+.animate-service-description {
+  animation: serviceDescription 5s ease-in-out infinite;
+}
+
+
+/* =========================================
+   MOVING CARD TOP LIGHT
+========================================= */
+
+@keyframes serviceLine {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  100% {
+    transform: translateX(450%);
+  }
+}
+
+.animate-service-line {
+  animation: serviceLine 4s linear infinite;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+@keyframes servicesGlow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translate(45px, -30px) scale(1.08);
+    opacity: 0.7;
+  }
+}
+
+.animate-services-glow {
+  animation: servicesGlow 12s ease-in-out infinite;
+}
+
+
+/* Second background glow */
+
+@keyframes servicesGlow2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: translate(-40px, 35px) scale(1.08);
+    opacity: 0.7;
+  }
+}
+
+.animate-services-glow-2 {
+  animation: servicesGlow2 15s ease-in-out infinite;
+}
+
+
+/* Center subtle glow */
+
+@keyframes servicesCenterGlow {
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.45;
+  }
+}
+
+.animate-services-center-glow {
+  animation: servicesCenterGlow 10s ease-in-out infinite;
+}
+/* =========================================
+   SERVICES - TITLE
+========================================= */
+
+@keyframes servicesTitle {
+  0% {
+    transform: translateX(-18px);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: translateX(18px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-18px);
+    opacity: 0.7;
+  }
+}
+
+.animate-services-title {
+  animation: servicesTitle 7s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SERVICES - PARAGRAPH 3D FLIP
+========================================= */
+
+.service-description-wrapper {
+  perspective: 800px;
+}
+
+@keyframes serviceDescriptionFlip {
+  0% {
+    transform: perspective(800px) rotateX(0deg);
+    opacity: 0.7;
+  }
+
+  20% {
+    transform: perspective(800px) rotateX(10deg);
+    opacity: 0.9;
+  }
+
+  40% {
+    transform: perspective(800px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  70% {
+    transform: perspective(800px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  85% {
+    transform: perspective(800px) rotateX(-8deg);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: perspective(800px) rotateX(0deg);
+    opacity: 0.7;
+  }
+}
+
+.animate-service-description {
+  animation: serviceDescriptionFlip 7s ease-in-out infinite;
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+
+
+/* =========================================
+   SERVICES - MOVING CARD LIGHT
+========================================= */
+
+@keyframes serviceLine {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  100% {
+    transform: translateX(450%);
+  }
+}
+
+.animate-service-line {
+  animation: serviceLine 4s linear infinite;
+}
+
+
+/* =========================================
+   SERVICES - LEFT GLOW
+========================================= */
+
+@keyframes servicesGlow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+
+  50% {
+    transform: translate(45px, -30px) scale(1.08);
+    opacity: 0.7;
+  }
+}
+
+.animate-services-glow {
+  animation: servicesGlow 12s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SERVICES - RIGHT GLOW
+========================================= */
+
+@keyframes servicesGlow2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: translate(-40px, 35px) scale(1.08);
+    opacity: 0.7;
+  }
+}
+
+.animate-services-glow-2 {
+  animation: servicesGlow2 15s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SERVICES - CENTER GLOW
+========================================= */
+
+@keyframes servicesCenterGlow {
+  0%,
+  100% {
+    transform: scale(0.9);
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: scale(1.15);
+    opacity: 0.45;
+  }
+}
+
+.animate-services-center-glow {
+  animation: servicesCenterGlow 10s ease-in-out infinite;
+}
+/* =========================================
+   SERVICES - PARAGRAPH SMOOTH FADE
+========================================= */
+
+.service-description-wrapper {
+  perspective: 800px;
+}
+
+@keyframes serviceDescriptionFlip {
+  0% {
+    opacity: 0.25;
+    transform: perspective(800px) rotateX(6deg);
+  }
+
+  20% {
+    opacity: 0.40;
+    transform: perspective(800px) rotateX(2deg);
+  }
+
+  40% {
+    opacity: 0.60;
+    transform: perspective(800px) rotateX(0deg);
+  }
+
+  60% {
+    opacity: 0.70;
+    transform: perspective(800px) rotateX(0deg);
+  }
+
+  80% {
+    opacity: 1;
+    transform: perspective(800px) rotateX(-3deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: perspective(800px) rotateX(6deg);
+  }
+}
+
+.animate-service-description {
+  animation: serviceDescriptionFlip 6s ease-in-out infinite;
+  transform-origin: center;
+  backface-visibility: hidden;
+}
+/* =========================================
+   CONTACT - TITLE ANIMATION
+========================================= */
+
+@keyframes contactTitle {
+  0% {
+    opacity: 0.55;
+    transform: translateY(10px) scale(0.98);
+    filter: blur(1px);
+  }
+
+  25% {
+    opacity: 0.85;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.01);
+    filter: blur(0);
+  }
+
+  75% {
+    opacity: 0.9;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0.55;
+    transform: translateY(10px) scale(0.98);
+    filter: blur(1px);
+  }
+}
+
+.contact-title {
+  animation: contactTitle 6s ease-in-out infinite;
+  will-change: transform, opacity, filter;
+}
+
+
+/* =========================================
+   CONTACT - BACKGROUND GLOW
+========================================= */
+
+@keyframes contactGlow {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: translate(35px, -25px) scale(1.08);
+    opacity: 0.6;
+  }
+}
+
+.animate-contact-glow {
+  animation: contactGlow 12s ease-in-out infinite;
+}
+
+@keyframes contactGlow2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translate(-30px, 25px) scale(1.08);
+    opacity: 0.55;
+  }
+}
+
+.animate-contact-glow-2 {
+  animation: contactGlow2 15s ease-in-out infinite;
+}
+/* =========================================
+   EDUCATION - TYPE & FADE TITLE
+========================================= */
+
+.education-typed-text {
+  display: inline-block;
+
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #ffffff 45%,
+    #60a5fa 70%,
+    #22d3ee 100%
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  animation: educationTitleFade 6s ease-in-out infinite;
+}
+
+@keyframes educationTitleFade {
+  0% {
+    opacity: 0.5;
+  }
+
+  8% {
+    opacity: 0.50;
+  }
+
+  65% {
+    opacity: 0.85;
+  }
+
+  82% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes scrollLine {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(250%);
+    opacity: 0;
+  }
+}
+
+.animate-scroll-line {
+  animation: scrollLine 2s ease-in-out infinite;
 }

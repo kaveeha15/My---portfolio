@@ -1,4 +1,42 @@
+import { useEffect, useState } from "react";
+
 function Education() {
+  const [typedText, setTypedText] = useState("");
+
+  const fullText = "Academic Journey";
+
+  useEffect(() => {
+    let index = 0;
+    let typingInterval;
+    let restartTimeout;
+
+    const startTyping = () => {
+      index = 0;
+      setTypedText("");
+
+      typingInterval = setInterval(() => {
+        index++;
+
+        setTypedText(fullText.slice(0, index));
+
+        if (index === fullText.length) {
+          clearInterval(typingInterval);
+
+          restartTimeout = setTimeout(() => {
+            startTyping();
+          }, 2500);
+        }
+      }, 160);
+    };
+
+    startTyping();
+
+    return () => {
+      clearInterval(typingInterval);
+      clearTimeout(restartTimeout);
+    };
+  }, []);
+
   const semesters = [
     {
       title: "Semester 01",
@@ -59,11 +97,13 @@ function Education() {
       className="relative min-h-screen bg-black text-white px-6 pt-32 pb-24 overflow-hidden"
     >
       {/* Background Glow */}
+
       <div className="absolute top-20 right-[-180px] w-[450px] h-[450px] bg-blue-500/10 rounded-full blur-[150px]"></div>
 
       <div className="absolute bottom-10 left-[-180px] w-[450px] h-[450px] bg-cyan-400/10 rounded-full blur-[150px]"></div>
 
       {/* Main Container */}
+
       <div className="relative z-10 max-w-6xl mx-auto">
 
         {/* ===================================== */}
@@ -76,11 +116,14 @@ function Education() {
             My Education
           </p>
 
-          <h1 className="text-4xl md:text-6xl font-bold">
-            Academic{" "}
-            <span className="text-blue-400">
-              Journey
+          {/* Animated Title */}
+
+          <h1 className="text-4xl md:text-6xl font-bold min-h-[72px] md:min-h-[90px] flex items-center justify-center">
+
+            <span className="education-typed-text">
+              {typedText}
             </span>
+
           </h1>
 
           <p className="text-gray-400 max-w-2xl mx-auto mt-6 leading-7">
@@ -137,20 +180,21 @@ function Education() {
           <div className="grid md:grid-cols-2 gap-6">
 
             {semesters.map((semester) => (
+
               <div
                 key={semester.title}
-                className="border border-white/10 rounded-2xl bg-white/[0.03] p-7 hover:border-blue-400/40 hover:-translate-y-1 transition-all duration-300"
+                className="group border border-white/10 rounded-2xl bg-white/[0.03] p-7 hover:border-blue-400/40 hover:-translate-y-2 hover:bg-blue-400/[0.04] transition-all duration-500"
               >
 
                 {/* Semester Title */}
 
                 <div className="flex items-center gap-4 mb-6">
 
-                  <div className="w-11 h-11 rounded-full bg-blue-400/10 border border-blue-400/20 flex items-center justify-center text-blue-400 font-semibold">
+                  <div className="w-11 h-11 rounded-full bg-blue-400/10 border border-blue-400/20 flex items-center justify-center text-blue-400 font-semibold group-hover:bg-blue-400/20 group-hover:scale-110 transition-all duration-300">
                     {semester.title.split(" ")[1]}
                   </div>
 
-                  <h3 className="text-xl font-semibold">
+                  <h3 className="text-xl font-semibold group-hover:text-blue-400 transition-colors duration-300">
                     {semester.title}
                   </h3>
 
@@ -162,9 +206,10 @@ function Education() {
                 <div className="space-y-3">
 
                   {semester.modules.map((module) => (
+
                     <div
                       key={module}
-                      className="flex items-start gap-3 text-gray-400 text-sm"
+                      className="flex items-start gap-3 text-gray-400 text-sm hover:text-gray-200 transition-colors duration-300"
                     >
 
                       <span className="text-blue-400 mt-1">
@@ -176,11 +221,13 @@ function Education() {
                       </span>
 
                     </div>
+
                   ))}
 
                 </div>
 
               </div>
+
             ))}
 
           </div>
@@ -194,7 +241,7 @@ function Education() {
 
         <div className="mt-20">
 
-          <div className="border border-blue-400/20 rounded-2xl bg-blue-400/[0.03] p-8 md:p-10 hover:border-blue-400/40 transition-all duration-300">
+          <div className="border border-blue-400/20 rounded-2xl bg-blue-400/[0.03] p-8 md:p-10 hover:border-blue-400/40 hover:-translate-y-1 transition-all duration-500">
 
             <div className="text-center">
 
@@ -256,13 +303,13 @@ function Education() {
             {/* A/L */}
             {/* =============================== */}
 
-            <div className="border border-white/10 rounded-2xl bg-white/[0.03] p-8 hover:border-blue-400/40 hover:-translate-y-1 transition-all duration-300">
+            <div className="group border border-white/10 rounded-2xl bg-white/[0.03] p-8 hover:border-blue-400/40 hover:-translate-y-2 hover:bg-blue-400/[0.04] transition-all duration-500">
 
               <span className="inline-block px-4 py-2 rounded-full bg-blue-400/10 border border-blue-400/20 text-blue-400 text-sm mb-6">
                 2021
               </span>
 
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-blue-400 transition-colors duration-300">
                 G.C.E. Advanced Level
               </h2>
 
@@ -313,13 +360,13 @@ function Education() {
             {/* O/L */}
             {/* =============================== */}
 
-            <div className="border border-white/10 rounded-2xl bg-white/[0.03] p-8 hover:border-blue-400/40 hover:-translate-y-1 transition-all duration-300">
+            <div className="group border border-white/10 rounded-2xl bg-white/[0.03] p-8 hover:border-blue-400/40 hover:-translate-y-2 hover:bg-blue-400/[0.04] transition-all duration-500">
 
               <span className="inline-block px-4 py-2 rounded-full bg-blue-400/10 border border-blue-400/20 text-blue-400 text-sm mb-6">
                 2018
               </span>
 
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-blue-400 transition-colors duration-300">
                 G.C.E. Ordinary Level
               </h2>
 
@@ -348,7 +395,7 @@ function Education() {
         {/* BOTTOM HIGHLIGHT */}
         {/* ===================================== */}
 
-        <div className="mt-20 border border-white/10 rounded-2xl bg-white/[0.03] p-8 text-center hover:border-blue-400/30 transition">
+        <div className="mt-20 border border-white/10 rounded-2xl bg-white/[0.03] p-8 text-center hover:border-blue-400/30 hover:bg-blue-400/[0.02] transition-all duration-500">
 
           <p className="text-blue-400 text-sm uppercase tracking-[0.25em] mb-3">
             Education & Growth
@@ -371,6 +418,7 @@ function Education() {
         </div>
 
       </div>
+
     </section>
   );
 }

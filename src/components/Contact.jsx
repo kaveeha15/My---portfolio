@@ -78,20 +78,22 @@ function Contact() {
       className="relative min-h-screen bg-black text-white px-6 py-24 overflow-hidden"
     >
       {/* Background Glow */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/20 rounded-full blur-3xl animate-contact-glow"></div>
 
-      <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-72 h-72 bg-blue-600/20 rounded-full blur-3xl animate-contact-glow-2"></div>
 
       {/* Main Container */}
       <div className="relative max-w-6xl mx-auto">
 
         {/* Heading */}
         <div className="text-center mb-14">
+
           <p className="text-purple-400 uppercase tracking-[0.3em] text-sm mb-3">
             Get In Touch
           </p>
 
-          <h2 className="text-4xl md:text-5xl font-bold">
+          {/* Animated Title */}
+          <h2 className="contact-title text-4xl md:text-5xl font-bold">
             Contact <span className="text-purple-400">Me</span>
           </h2>
 
@@ -99,6 +101,7 @@ function Contact() {
             Have a project in mind or want to discuss an opportunity?
             Feel free to send me a message.
           </p>
+
         </div>
 
         {/* Contact Information + Form */}
@@ -107,8 +110,12 @@ function Contact() {
           {/* Contact Information */}
           <div className="space-y-5">
 
-            <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 transition duration-300">
-              <p className="text-purple-400 text-sm mb-2">Email</p>
+            {/* Email */}
+            <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 hover:-translate-y-1 transition-all duration-300">
+
+              <p className="text-purple-400 text-sm mb-2">
+                Email
+              </p>
 
               <a
                 href="mailto:nimanshikavisha@gmail.com"
@@ -116,10 +123,15 @@ function Contact() {
               >
                 nimanshikavisha@gmail.com
               </a>
+
             </div>
 
-            <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 transition duration-300">
-              <p className="text-purple-400 text-sm mb-2">Phone</p>
+            {/* Phone */}
+            <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 hover:-translate-y-1 transition-all duration-300">
+
+              <p className="text-purple-400 text-sm mb-2">
+                Phone
+              </p>
 
               <a
                 href="tel:+94784881144"
@@ -127,14 +139,20 @@ function Contact() {
               >
                 +94 78 488 1144
               </a>
+
             </div>
 
-            <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 transition duration-300">
-              <p className="text-purple-400 text-sm mb-2">Location</p>
+            {/* Location */}
+            <div className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 hover:-translate-y-1 transition-all duration-300">
+
+              <p className="text-purple-400 text-sm mb-2">
+                Location
+              </p>
 
               <p className="text-gray-200">
                 Matara, Sri Lanka
               </p>
+
             </div>
 
             {/* Social Links */}
@@ -145,8 +163,9 @@ function Contact() {
                 href="https://linkedin.com/in/lk-nimanshi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 hover:-translate-y-1 transition duration-300"
+                className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-blue-500/50 hover:-translate-y-1 transition-all duration-300"
               >
+
                 <p className="text-blue-400 text-sm mb-2">
                   LinkedIn
                 </p>
@@ -154,6 +173,7 @@ function Contact() {
                 <p className="text-gray-200 break-all">
                   linkedin.com/in/lk-nimanshi
                 </p>
+
               </a>
 
               {/* GitHub */}
@@ -161,8 +181,9 @@ function Contact() {
                 href="https://github.com/kaveeha15"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 hover:-translate-y-1 transition duration-300"
+                className="group bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-6 hover:border-purple-500/50 hover:-translate-y-1 transition-all duration-300"
               >
+
                 <p className="text-purple-400 text-sm mb-2">
                   GitHub
                 </p>
@@ -170,20 +191,24 @@ function Contact() {
                 <p className="text-gray-200 break-all">
                   github.com/kaveeha15
                 </p>
+
               </a>
 
             </div>
+
           </div>
 
           {/* Contact Form */}
           <div>
+
             <form
               onSubmit={handleSubmit}
-              className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl"
+              className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl hover:border-purple-500/20 transition-all duration-500"
             >
 
               {/* Name */}
               <div className="mb-6">
+
                 <label
                   htmlFor="name"
                   className="block text-gray-300 mb-2"
@@ -199,12 +224,14 @@ function Contact() {
                   onChange={handleChange}
                   placeholder="Enter your name"
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-500 outline-none focus:border-purple-500 transition"
+                  className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-500 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/30 transition"
                 />
+
               </div>
 
               {/* Email */}
               <div className="mb-6">
+
                 <label
                   htmlFor="email"
                   className="block text-gray-300 mb-2"
@@ -220,12 +247,14 @@ function Contact() {
                   onChange={handleChange}
                   placeholder="Enter your email"
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-500 outline-none focus:border-purple-500 transition"
+                  className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-500 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/30 transition"
                 />
+
               </div>
 
               {/* Message */}
               <div className="mb-6">
+
                 <label
                   htmlFor="message"
                   className="block text-gray-300 mb-2"
@@ -241,8 +270,9 @@ function Contact() {
                   placeholder="Write your message..."
                   rows="6"
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-500 outline-none focus:border-purple-500 transition resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-black/40 border border-white/10 text-white placeholder-gray-500 outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/30 transition resize-none"
                 ></textarea>
+
               </div>
 
               {/* Success / Error Message */}
@@ -262,15 +292,19 @@ function Contact() {
               <button
                 type="submit"
                 disabled={isSending}
-                className="w-full py-3 px-6 rounded-lg bg-purple-600 hover:bg-purple-700 disabled:bg-purple-900 disabled:cursor-not-allowed transition duration-300 font-semibold shadow-lg shadow-purple-600/20"
+                className="w-full py-3 px-6 rounded-lg bg-purple-600 hover:bg-purple-700 disabled:bg-purple-900 disabled:cursor-not-allowed transition duration-300 font-semibold shadow-lg shadow-purple-600/20 hover:shadow-purple-600/40"
               >
                 {isSending ? "Sending..." : "Send Message"}
               </button>
 
             </form>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
   );
 }

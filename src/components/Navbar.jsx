@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -6,7 +6,10 @@ function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
 
         {/* Logo */}
-        <Link to="/" className="text-xl font-bold text-white">
+        <Link
+          to="/"
+          className="text-xl font-bold text-white animate-logo-fade"
+        >
           Kavisha<span className="text-cyan-400">.</span>
         </Link>
 
@@ -35,13 +38,6 @@ function Navbar() {
           </Link>
 
           <Link
-            to="/projects"
-            className="text-gray-300 hover:text-cyan-400 transition"
-          >
-            Projects
-          </Link>
-
-          <Link
             to="/experience"
             className="text-gray-300 hover:text-cyan-400 transition"
           >
@@ -54,6 +50,21 @@ function Navbar() {
           >
             Education
           </Link>
+
+          <Link
+            to="/Certificates & Courses"
+            className="text-gray-300 hover:text-cyan-400 transition"
+          >
+            Certificates & Courses
+          </Link>
+
+          <Link
+            to="/projects"
+            className="text-gray-300 hover:text-cyan-400 transition"
+          >
+            Projects
+          </Link>
+
           <Link
             to="/services"
             className="text-gray-300 hover:text-cyan-400 transition"
@@ -64,15 +75,16 @@ function Navbar() {
         </div>
 
         {/* Let's Talk Button */}
-      <a
-  href="/contact"
-  className="hidden md:block px-5 py-2.5 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
->
-  Let's Talk
-</a>
+        <a
+          href="/contact"
+          className="hidden md:block px-5 py-2.5 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+        >
+          Let's Talk
+        </a>
+
       </div>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
