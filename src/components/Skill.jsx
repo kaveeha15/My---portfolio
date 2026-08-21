@@ -1,14 +1,18 @@
 import {
-  Code2,
-  Palette,
-  Braces,
-  Atom,
-  Wind,
-  Server,
-  Database,
-  Flame,
-  GitBranch,
-} from "lucide-react";
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGithub,
+} from "react-icons/fa"
+
+import {
+  SiTailwindcss,
+  SiExpress,
+  SiFirebase,
+  SiMysql,
+} from "react-icons/si"
 
 function Skills() {
   const skills = [
@@ -16,63 +20,73 @@ function Skills() {
       name: "HTML",
       level: "Advanced",
       percentage: "90%",
-      icon: Code2,
+      icon: FaHtml5,
+      color: "#E34F26",
     },
     {
       name: "CSS",
       level: "Advanced",
       percentage: "85%",
-      icon: Palette,
+      icon: FaCss3Alt,
+      color: "#1572B6",
     },
     {
       name: "JavaScript",
       level: "Intermediate",
       percentage: "80%",
-      icon: Braces,
+      icon: FaJs,
+      color: "#F7DF1E",
     },
     {
       name: "React.js",
       level: "Intermediate",
       percentage: "80%",
-      icon: Atom,
+      icon: FaReact,
+      color: "#61DAFB",
     },
     {
       name: "Tailwind CSS",
       level: "Intermediate",
       percentage: "85%",
-      icon: Wind,
+      icon: SiTailwindcss,
+      color: "#06B6D4",
     },
     {
       name: "Node.js",
       level: "Intermediate",
       percentage: "75%",
-      icon: Server,
+      icon: FaNodeJs,
+      color: "#5FA04E",
     },
     {
       name: "Express.js",
       level: "Intermediate",
       percentage: "75%",
-      icon: Server,
+      icon: SiExpress,
+      color: "#FFFFFF",
     },
     {
       name: "Firebase",
       level: "Intermediate",
       percentage: "75%",
-      icon: Flame,
+      icon: SiFirebase,
+      color: "#FFCA28",
     },
     {
       name: "MySQL",
       level: "Intermediate",
       percentage: "75%",
-      icon: Database,
+      icon: SiMysql,
+      color: "#4479A1",
     },
     {
       name: "Git & GitHub",
       level: "Intermediate",
       percentage: "80%",
-      icon: GitBranch,
+      icon: FaGithub,
+      color: "#FFFFFF",
     },
-  ];
+  ]
 
   return (
     <section
@@ -94,9 +108,8 @@ function Skills() {
         overflow-hidden
       "
     >
-      {/* =============================== */}
-      {/* BACKGROUND GLOW */}
-      {/* =============================== */}
+
+      {/* Background Glow */}
 
       <div
         className="
@@ -149,17 +162,11 @@ function Skills() {
         "
       ></div>
 
-
-      {/* =============================== */}
-      {/* MAIN CONTENT */}
-      {/* =============================== */}
+      {/* Main Content */}
 
       <div className="relative z-10 max-w-7xl mx-auto">
 
-
-        {/* =============================== */}
-        {/* HEADING */}
-        {/* =============================== */}
+        {/* Heading */}
 
         <div className="text-center mb-12 sm:mb-16">
 
@@ -176,9 +183,6 @@ function Skills() {
           >
             My Skills
           </p>
-
-
-          {/* Moving Heading */}
 
           <div className="overflow-hidden w-full py-2">
 
@@ -203,7 +207,6 @@ function Skills() {
 
           </div>
 
-
           <p
             className="
               text-gray-400
@@ -224,10 +227,7 @@ function Skills() {
 
         </div>
 
-
-        {/* =============================== */}
-        {/* SKILLS GRID */}
-        {/* =============================== */}
+        {/* Skills Grid */}
 
         <div
           className="
@@ -243,192 +243,155 @@ function Skills() {
           "
         >
 
-          {skills.map((skill) => (
+          {skills.map((skill) => {
 
-            <div
-              key={skill.name}
-              className="
-                group
-                border
-                border-white/10
-                rounded-xl
-                sm:rounded-2xl
-                p-4
-                sm:p-5
-                md:p-6
-                bg-white/[0.03]
-                hover:border-blue-400/50
-                hover:bg-blue-400/[0.05]
-                transition-all
-                duration-300
-                hover:-translate-y-1
-                sm:hover:-translate-y-2
-              "
-            >
+            const SkillIcon = skill.icon
 
-              {/* =============================== */}
-              {/* ICON */}
-              {/* =============================== */}
-
+            return (
               <div
+                key={skill.name}
                 className="
-                  w-11
-                  h-11
-                  sm:w-12
-                  sm:h-12
-                  md:w-14
-                  md:h-14
-                  mx-auto
-                  mb-3
-                  sm:mb-4
-                  md:mb-5
-                  rounded-lg
-                  sm:rounded-xl
+                  group
                   border
-                  border-blue-400/20
-                  bg-blue-400/10
-                  flex
-                  items-center
-                  justify-center
-                  group-hover:scale-110
-                  transition
+                  border-white/10
+                  rounded-xl
+                  sm:rounded-2xl
+                  p-4
+                  sm:p-5
+                  md:p-6
+                  bg-white/[0.03]
+                  hover:border-blue-400/50
+                  hover:bg-blue-400/[0.05]
+                  transition-all
                   duration-300
+                  hover:-translate-y-1
+                  sm:hover:-translate-y-2
                 "
               >
 
-                <skill.icon
-                  size={22}
-                  className="
-                    text-blue-400
-                    sm:hidden
-                    group-hover:scale-110
-                    transition
-                    duration-300
-                  "
-                />
-
-                <skill.icon
-                  size={26}
-                  className="
-                    hidden
-                    sm:block
-                    md:hidden
-                    text-blue-400
-                    group-hover:scale-110
-                    transition
-                    duration-300
-                  "
-                />
-
-                <skill.icon
-                  size={28}
-                  className="
-                    hidden
-                    md:block
-                    text-blue-400
-                    group-hover:scale-110
-                    transition
-                    duration-300
-                  "
-                />
-
-              </div>
-
-
-              {/* =============================== */}
-              {/* SKILL NAME */}
-              {/* =============================== */}
-
-              <h3
-                className="
-                  text-center
-                  text-gray-200
-                  font-semibold
-                  text-sm
-                  sm:text-base
-                  truncate
-                "
-              >
-                {skill.name}
-              </h3>
-
-
-              {/* =============================== */}
-              {/* LEVEL */}
-              {/* =============================== */}
-
-              <p
-                className="
-                  text-center
-                  text-gray-500
-                  text-xs
-                  sm:text-sm
-                  mt-1.5
-                  sm:mt-2
-                "
-              >
-                {skill.level}
-              </p>
-
-
-              {/* =============================== */}
-              {/* PROGRESS BAR */}
-              {/* =============================== */}
-
-              <div className="mt-3 sm:mt-4">
+                {/* Technology Logo */}
 
                 <div
                   className="
-                    w-full
-                    h-1
-                    sm:h-1.5
-                    bg-white/10
-                    rounded-full
-                    overflow-hidden
+                    w-11
+                    h-11
+                    sm:w-12
+                    sm:h-12
+                    md:w-14
+                    md:h-14
+                    mx-auto
+                    mb-3
+                    sm:mb-4
+                    md:mb-5
+                    rounded-lg
+                    sm:rounded-xl
+                    border
+                    border-blue-400/20
+                    bg-blue-400/10
+                    flex
+                    items-center
+                    justify-center
+                    group-hover:scale-110
+                    group-hover:bg-blue-400/15
+                    transition-all
+                    duration-300
                   "
                 >
 
-                  <div
+                  <SkillIcon
+                    size={28}
+                    color={skill.color}
                     className="
-                      h-full
-                      bg-blue-400
-                      rounded-full
-                      transition-all
-                      duration-1000
+                      group-hover:scale-110
+                      transition-transform
+                      duration-300
                     "
-                    style={{
-                      width: skill.percentage,
-                    }}
-                  ></div>
+                  />
 
                 </div>
 
+                {/* Skill Name */}
+
+                <h3
+                  className="
+                    text-center
+                    text-gray-200
+                    font-semibold
+                    text-sm
+                    sm:text-base
+                    truncate
+                  "
+                >
+                  {skill.name}
+                </h3>
+
+                {/* Level */}
 
                 <p
                   className="
-                    text-right
+                    text-center
                     text-gray-500
-                    text-[10px]
-                    sm:text-xs
+                    text-xs
+                    sm:text-sm
                     mt-1.5
                     sm:mt-2
                   "
                 >
-                  {skill.percentage}
+                  {skill.level}
                 </p>
 
+                {/* Progress Bar */}
+
+                <div className="mt-3 sm:mt-4">
+
+                  <div
+                    className="
+                      w-full
+                      h-1
+                      sm:h-1.5
+                      bg-white/10
+                      rounded-full
+                      overflow-hidden
+                    "
+                  >
+
+                    <div
+                      className="
+                        h-full
+                        bg-blue-400
+                        rounded-full
+                        transition-all
+                        duration-1000
+                      "
+                      style={{
+                        width: skill.percentage,
+                      }}
+                    ></div>
+
+                  </div>
+
+                  <p
+                    className="
+                      text-right
+                      text-gray-500
+                      text-[10px]
+                      sm:text-xs
+                      mt-1.5
+                      sm:mt-2
+                    "
+                  >
+                    {skill.percentage}
+                  </p>
+
+                </div>
+
               </div>
-
-            </div>
-
-          ))}
+            )
+          })}
 
         </div>
 
-
-        {/* =============================== */}
-        {/* BOTTOM TEXT */}
-        {/* =============================== */}
+        {/* Bottom Text */}
 
         <div
           className="
@@ -448,7 +411,7 @@ function Skills() {
       </div>
 
     </section>
-  );
+  )
 }
 
-export default Skills;
+export default Skills
